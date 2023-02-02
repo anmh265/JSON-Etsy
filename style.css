@@ -1,0 +1,204 @@
+@font-face {
+    font-family: font-med;
+    src: url('https://www.etsy.com/assets/type/Graphik-Medium-Web.woff2?v=220104');
+}
+@font-face {
+    font-family: font-reg;
+    src: url('https://www.etsy.com/assets/type/Graphik-Regular-Web.woff2?v=220104');
+}
+@font-face {
+    font-family: font-light;
+    src: url('https://www.etsy.com/assets/type/Guardian-EgypTT-Light.woff2?v=220104');
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    padding: 10px 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin-inline: auto;
+    transform: translateX(-7px);
+}
+
+.etsy-logo{
+    width: 85px;
+    height: 50px;
+    padding-right: 6px;
+    position: relative;
+    top: 6px;
+    right: 3px;
+}
+
+.etsy-logo svg{
+    fill: #f1641e;
+}
+
+.search-section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid #222;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0);
+    flex: 1 1;
+    overflow: hidden;
+    margin-right: 18px;
+}
+
+.search-section .search{
+    width: 100%;
+    padding: 8px 42px 8px 18px;
+    border: none;
+    font-size: 16px;
+    line-height: 28px;
+    font-family: font-reg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(1px);
+}
+
+.search-btn{
+    border: none;
+    padding: 8px 21px 7px 13px;
+    cursor: pointer;
+    background-color: white;
+    transition: background-color 0.2s ease-in-out;
+    margin-top: 2px;
+    margin-right: 1px;
+}
+
+.search-btn:hover{
+    background-color: rgba(34, 34, 34, 0.05);
+}
+
+.search-section svg{
+    width: 24px;
+    height: 24px;
+}
+
+.login-wishlist{
+    display: flex;
+    align-items: center;
+}
+
+.login-wishlist .sign-in{
+    font-size: 13px;
+    line-height: 1.4;
+    padding: 9px 15px;
+    margin-right: 6px;
+    text-decoration: none;
+    font-family: font-med;
+    color: #222;
+}
+
+.login-wishlist .wishlist, .login-wishlist .basket{
+    display: inline-block;
+    padding: 12px;
+    transform: translateY(1px);
+}
+
+.login-wishlist .wishlist svg, .login-wishlist .basket svg{
+    width: 24px;
+    height: 24px;
+}
+
+.categories{
+    max-width: 1400px;
+    margin-inline: auto;
+    padding-inline: 35px;
+}
+
+.categories ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transform: translate(-7px, -1px);
+}
+
+.categories ul li{
+    margin-top: 4px;
+    margin-right: 12px;
+    padding-bottom: 12px;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    font-family: font-reg;
+    line-height: 18px;   
+}
+
+.categories ul li a, .categories ul .gift-text{
+    text-decoration: none;
+    color: #222;
+}
+
+.categories ul .gift-svg{
+    margin-top: 1px;
+}
+
+.categories ul .gift-text{
+    margin-left: 2px;
+    margin-bottom: 1px;
+}
+
+.discover-section{
+    margin-top: -5px;
+}
+
+.discover-section h1{
+    text-align: center;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 36px;
+    font-family: font-light;
+    letter-spacing: 0.5px;
+    color: #222;
+    padding: 18px 18px 18px 18px;
+    background-color: #d7e6f5;
+    /* transform: translate(-3px, 8px); */
+}
+
+.discover-categories{
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    position: relative;
+}
+
+.discover-categories-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 9px 30px; 
+    width: min-content;
+    text-align: center;
+}
+
+.card-img img{
+    width: 114px;
+    border-radius: 50%;
+    margin-block: 12px;
+}
+
+.discover-categories-card .card-text{
+    font-family: font-med;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.discover-categories-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: #d7e6f5;
+    z-index: -1;
+}
