@@ -1,22 +1,152 @@
 @font-face {
-    font-family: font-med;
-    src: url('https://www.etsy.com/assets/type/Graphik-Medium-Web.woff2?v=220104');
+  font-family: font-med;
+  src: url("https://www.etsy.com/assets/type/Graphik-Medium-Web.woff2?v=220104");
 }
 @font-face {
-    font-family: font-reg;
-    src: url('https://www.etsy.com/assets/type/Graphik-Regular-Web.woff2?v=220104');
+  font-family: font-reg;
+  src: url("https://www.etsy.com/assets/type/Graphik-Regular-Web.woff2?v=220104");
 }
 @font-face {
-    font-family: font-light;
-    src: url('https://www.etsy.com/assets/type/Guardian-EgypTT-Light.woff2?v=220104');
+  font-family: font-light;
+  src: url("https://www.etsy.com/assets/type/Guardian-EgypTT-Light.woff2?v=220104");
 }
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-header{
+.website {
+  display: none;
+}
+
+.mobile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-inline: 12px;
+}
+
+.etsy-logo {
+  width: 60px;
+  height: 30px;
+  fill: #f1641e;
+  transform: translate(-3px, -2px);
+}
+
+.login-wishlist {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  line-height: 1.4;
+  transform: translateX(2px);
+}
+
+.login-wishlist .sign-in {
+  display: inline-block;
+  text-decoration: none;
+  color: #222;
+  font-family: font-med;
+  margin-right: 5px;
+  padding: 9px 15px;
+  transform: translateX(1px);
+}
+
+.login-wishlist .wishlist,
+.login-wishlist .basket {
+  height: 24px;
+  width: 24px;
+  color: #222;
+  margin: 12px;
+}
+
+.login-wishlist .wishlist {
+  transform: translateY(-1px);
+}
+
+.login-wishlist .basket {
+  transform: translate(-2px, -1px);
+}
+
+.login-wishlist .wishlist svg,
+.login-wishlist .basket svg {
+  width: 100%;
+}
+
+.mobile-search-section{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.search-menu{
+    margin-right: 12px;
+    margin-top: 3px;
+}
+
+.search-menu svg, .search-icon svg{
+    width: 100%;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 2px solid #222;
+    border-radius: 96px;
+    background-color: rgba(34, 34, 34, 0.05);
+}
+
+.search input{
+    border: none;
+    font-size: 16px;
+    line-height: 28px;
+    padding-block: 8px;
+    padding-left: 18px;
+    /* padding-right: 35px; */
+    background-color: transparent;
+}
+
+.search-icon{
+    border: none;
+    background-color: transparent;
+    margin-right: 22px;
+    margin-top: 2px;
+}
+
+@media screen and (min-width: 480px) {
+    .mobile{
+        margin-top: 5px;
+    }
+  .etsy-logo {
+    width: 80px;
+    height: 40px;
+  }
+  .login-wishlist .sign-in{
+    transform: translate(-3px, -3px);
+  }
+  .login-wishlist .wishlist{
+    transform: translate(-2px, -4px);
+  }
+  .login-wishlist .basket{
+    transform: translate(-2px, -4px);
+  }
+  .mobile-search-section{
+    margin-top: -1px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .mobile {
+    display: none;
+  }
+  .website {
     padding: 10px 36px;
     display: flex;
     align-items: center;
@@ -24,23 +154,23 @@ header{
     max-width: 1400px;
     margin-inline: auto;
     transform: translateX(-7px);
-}
+  }
 
-.etsy-logo{
+  .etsy-logo {
     width: 85px;
     height: 50px;
     padding-right: 6px;
     position: relative;
     top: 6px;
     right: 3px;
-}
+  }
 
-.etsy-logo svg{
+  .etsy-logo svg {
     fill: #f1641e;
-}
+  }
 
-.search-section{
-    display: flex;
+  .search-section {
+    display: none;
     align-items: center;
     justify-content: space-between;
     border: 2px solid #222;
@@ -49,9 +179,9 @@ header{
     flex: 1 1;
     overflow: hidden;
     margin-right: 18px;
-}
+  }
 
-.search-section .search{
+  .search-section .search {
     width: 100%;
     padding: 8px 42px 8px 18px;
     border: none;
@@ -62,9 +192,9 @@ header{
     align-items: center;
     justify-content: center;
     transform: translateY(1px);
-}
+  }
 
-.search-btn{
+  .search-btn {
     border: none;
     padding: 8px 21px 7px 13px;
     cursor: pointer;
@@ -72,23 +202,23 @@ header{
     transition: background-color 0.2s ease-in-out;
     margin-top: 2px;
     margin-right: 1px;
-}
+  }
 
-.search-btn:hover{
+  .search-btn:hover {
     background-color: rgba(34, 34, 34, 0.05);
-}
+  }
 
-.search-section svg{
+  .search-section svg {
     width: 24px;
     height: 24px;
-}
+  }
 
-.login-wishlist{
+  .login-wishlist {
     display: flex;
     align-items: center;
-}
+  }
 
-.login-wishlist .sign-in{
+  .login-wishlist .sign-in {
     font-size: 13px;
     line-height: 1.4;
     padding: 9px 15px;
@@ -96,34 +226,37 @@ header{
     text-decoration: none;
     font-family: font-med;
     color: #222;
-}
+  }
 
-.login-wishlist .wishlist, .login-wishlist .basket{
+  .login-wishlist .wishlist,
+  .login-wishlist .basket {
     display: inline-block;
     padding: 12px;
     transform: translateY(1px);
-}
+  }
 
-.login-wishlist .wishlist svg, .login-wishlist .basket svg{
+  .login-wishlist .wishlist svg,
+  .login-wishlist .basket svg {
     width: 24px;
     height: 24px;
-}
+  }
 
-.categories{
+  .categories {
     max-width: 1400px;
     margin-inline: auto;
     padding-inline: 35px;
-}
+    display: none;
+  }
 
-.categories ul{
+  .categories ul {
     list-style: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
     transform: translate(-7px, -1px);
-}
+  }
 
-.categories ul li{
+  .categories ul li {
     margin-top: 4px;
     margin-right: 12px;
     padding-bottom: 12px;
@@ -131,28 +264,29 @@ header{
     align-items: center;
     font-size: 13px;
     font-family: font-reg;
-    line-height: 18px;   
-}
+    line-height: 18px;
+  }
 
-.categories ul li a, .categories ul .gift-text{
+  .categories ul li a,
+  .categories ul .gift-text {
     text-decoration: none;
     color: #222;
-}
+  }
 
-.categories ul .gift-svg{
+  .categories ul .gift-svg {
     margin-top: 1px;
-}
+  }
 
-.categories ul .gift-text{
+  .categories ul .gift-text {
     margin-left: 2px;
     margin-bottom: 1px;
-}
+  }
 
-.discover-section{
+  .discover-section {
     margin-top: -5px;
-}
+  }
 
-.discover-section h1{
+  .discover-section h1 {
     text-align: center;
     font-size: 32px;
     font-weight: 300;
@@ -163,37 +297,38 @@ header{
     padding: 18px 18px 18px 18px;
     background-color: #d7e6f5;
     /* transform: translate(-3px, 8px); */
-}
+  }
 
-.discover-categories{
+  .discover-categories {
     display: flex;
     align-items: baseline;
     justify-content: center;
+    flex-wrap: wrap;
     position: relative;
-}
+  }
 
-.discover-categories-card{
+  .discover-categories-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 9px 30px; 
+    padding: 9px 30px;
     width: min-content;
     text-align: center;
-}
+  }
 
-.card-img img{
+  .card-img img {
     width: 114px;
     border-radius: 50%;
     margin-block: 12px;
-}
+  }
 
-.discover-categories-card .card-text{
+  .discover-categories-card .card-text {
     font-family: font-med;
     font-size: 16px;
     line-height: 20px;
-}
+  }
 
-.discover-categories-bg{
+  .discover-categories-bg {
     position: absolute;
     top: 0;
     left: 0;
@@ -201,4 +336,5 @@ header{
     height: 50%;
     background-color: #d7e6f5;
     z-index: -1;
+  }
 }
