@@ -16,8 +16,8 @@
   padding: 0;
 }
 
-body{
-    color: #222;
+body {
+  color: #222;
 }
 
 .website {
@@ -149,6 +149,7 @@ body{
   flex-wrap: wrap;
   position: relative;
   padding: 6px 6px 0;
+  row-gap: 1px;
 }
 
 .discover-categories-card {
@@ -184,6 +185,8 @@ body{
   letter-spacing: 0.1px;
   margin-bottom: 6px;
   margin-top: -1px;
+  max-width: 96px;
+  margin-inline: auto;
 }
 
 .discover-categories-bg {
@@ -196,42 +199,92 @@ body{
   z-index: -1;
 }
 
-.deals-container{
-    margin-top: 45px;
-    padding-inline: 12px;
-    color: #222;
+.deals-container {
+  margin-top: 45px;
+  padding-inline: 12px;
+  color: #222;
+  max-width: 1400px;
+  margin-inline: auto;
 }
 
-.deals-header{
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
+.deals-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 
-.deals-header h2{
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 700;
+.deals-header h2 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  font-family: font-reg;
+  margin-top: -3px;
+}
+
+.deals-header a {
+  text-decoration: none;
+  font-size: 13px;
+  font-family: font-med;
+  color: #222;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: -2px;
+}
+
+.deals-header a img {
+  height: 24px;
+  width: 12px;
+  margin-left: 9px;
+  margin-top: -1px;
+}
+
+.dress-category{
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 12px;
+    row-gap: 19px;
+}
+
+.dress-card{
+    border: 1px solid rgba(3.4, 34, 34, 0.15);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.dress-card-img img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.dress-card-text{
+    padding: 7px 12px 12px;
+}
+
+.dress-card-text-off{
+    font-size: 13px;
+    line-height: 16px;
+    color: rgba(34, 34, 34);
     font-family: font-reg;
 }
 
-.deals-header a{
-    text-decoration: none;
-    color: #222;
-    font-size: 13px;
+.dress-card-type{
+    font-size: 16px;
+    line-height: 20px;
     font-family: font-med;
-    position: relative;
-}
-
-.deals-header a::after{
-    content: '';
-    position: absolute;
-    background-image: url('./Assets/left-arrow.svg');
-    height: 24px;
-    width: 12px;
+    padding-top: 6px;
+    margin-bottom: 10px;
 }
 
 
+
+@media screen and (min-width:425px) {
+    .discover-categories{
+        column-gap: 21px;
+    }
+}
 
 @media screen and (min-width: 480px) {
   .mobile {
@@ -253,6 +306,15 @@ body{
   .mobile-search-section {
     margin-top: -1px;
   }
+  .discover-categories {
+    justify-content: space-around;
+  }
+  .discover-categories-bg {
+    height: 75%;
+  }
+  .dress-category{
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media screen and (min-width: 640px) {
@@ -265,6 +327,7 @@ body{
     padding-top: 0;
     justify-content: space-between;
     /* margin-top: -6px; */
+    column-gap: unset;
   }
   .card-img {
     max-width: 84px;
@@ -272,12 +335,29 @@ body{
   }
   .discover-categories-card {
     flex-basis: unset;
-    max-width: unset;
+    max-width: min-content;
     flex-wrap: nowrap;
     padding: unset;
   }
+  .discover-categories-card .card-text {
+    margin-top: 5px;
+  }
   .discover-categories-bg {
-    height: 58%;
+    height: 50%;
+  }
+  .deals-header h2{
+    font-size: 28px;
+    line-height: 36px;
+  }
+  .deals-container{
+    padding-inline: 30px;
+  }
+  .dress-category{
+    column-gap: 18px;
+    row-gap: 25px;
+  }
+  .dress-card-type{
+    margin-bottom: 11px;
   }
 }
 
@@ -488,14 +568,23 @@ body{
     background-color: #d7e6f5;
     z-index: -1;
   }
+  .deals-container{
+    padding-inline: 36px;
+  }
+  .dress-category{
+    grid-template-columns: repeat(6, 1fr);
+  }
 }
 
-@media screen and (min-width:1200px) {
-    .discover-categories{
-        justify-content: center;
-        margin-top: -11px;
-    }
-    .discover-categories-card{
-        padding: 9px 30px;
-    }
+@media screen and (min-width: 1200px) {
+  .discover-categories {
+    justify-content: center;
+    margin-top: -11px;
+  }
+  .discover-categories-card {
+    padding: 9px 30px;
+  }
+  .deals-container{
+    margin-top: 36px;
+  }
 }
