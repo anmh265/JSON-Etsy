@@ -14,6 +14,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  /* border: 1px solid red; */
 }
 
 body {
@@ -278,6 +279,294 @@ body {
     margin-bottom: 10px;
 }
 
+.popular-gifts-container{
+    margin-top: 30px;
+    padding-inline: 12px;
+    margin-bottom: 60px;
+    max-width: 1400px;
+    margin-inline: auto;
+}
+
+.popular-gifts-container h2{
+    text-align: center;
+    font-size: 18px;
+    line-height: 24px;
+    font-family: font-reg;
+    padding-bottom: 18px;
+}
+
+.popular-gift-card-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.popular-gifts-img{
+    max-width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+}
+
+.popular-gifts-img img{
+    width: 100%;
+    border-radius: 6px;
+}
+
+.play-btn{
+    position: absolute;
+    z-index: 5;
+    bottom: 12px;
+    right: 12px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    display: none;
+}
+
+.play-btn svg{
+    display: block;
+    height: 18px;
+    width: 18px;
+}
+
+.popular-gifts-text-heading{
+    padding-top: 2px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: 0.1px;
+    font-family: font-med;
+}
+
+.rating{
+    display: flex;
+    align-items: center;
+}
+
+.star-rating{
+    display: flex;
+}
+
+.star-rating span{
+    height: 14px;
+    width: 14px;
+    display: block;
+}
+
+.star-rating span svg{
+    width: 100%;
+}
+
+.rating .customer-rating{
+    font-size: 13px;
+    line-height: 1.6;
+    color: #595959;
+    font-family: font-reg;
+    display: block;
+    margin-top: 3px;
+    margin-left: 4px;
+}
+
+.popular-gifts-price .currency-symbol, .popular-gifts-price .actual-price{
+    font-size: 16px;
+    line-height: 20px;
+    color: #222222;
+    display: inline-block;
+    font-family: font-med;
+}
+
+.popular-gifts-discount-section{
+    font-size: 13px;
+    line-height: 1.6;
+    font-family: font-reg;
+    color: #258635;
+}
+
+.popular-gift-strikeout{
+    text-decoration: line-through;
+}
+
+.discount{
+    margin-left: 3px;
+}
+
+.free-delivery{
+    font-size: 11px;
+    font-family: font-med;
+    padding: 3px 6px;
+    background-color: #d4e9d7;
+    color: #222;
+    max-width: fit-content;
+    border-radius: 20px;
+    display: none;
+}
+
+.active{
+    display: flex;
+}
+
+.about{
+    padding: 64px 30px 48px;
+    position: relative;
+    background-color: #fdebd2;
+    text-align: center;
+    color: #222;
+}
+
+.about-span-svg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    vertical-align: middle;
+    height: 24px;
+    transform: scale(1);
+    height: 24px;
+    overflow: hidden;
+}
+
+.about-span-svg svg{
+    fill: #fff;
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.about-header h2{
+    font-size: 32px;
+    line-height: 36px;
+    font-family: font-light;
+    font-weight: 300;
+    color: #222;
+    margin-bottom: 6px;
+}
+
+.about-header a{
+    color: #222;
+    font-size: 14px;
+    line-height: 1.4;
+    font-family: font-reg;
+}
+
+.about-info{
+    padding-top: 36px;
+    margin-bottom: 6px;
+}
+
+.footer-about-header{
+    font-size: 24px;
+    line-height: 32px;
+    font-family: font-reg;
+    margin-bottom: 18px;
+}
+
+.about-desc{
+    font-size: 16px;
+    line-height: 28px;
+    font-family: font-reg;
+}
+
+.about-desc .about-desc-underline{
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 2px;
+}
+
+.help-section{
+    margin-top: 30px;
+}
+
+.help-section p{
+    font-size: 18px;
+    line-height: 24px;
+    font-family: font-med;
+}
+
+.help-center-btn{
+    border: 2px solid black;
+    background-color: transparent;
+    padding: 10px 18px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-family: font-med;
+    line-height: 1.5;
+    margin-top: 12px;
+    cursor: pointer;
+}
+
+.subscription-section{
+    padding: 18px 24px 36px;
+    position: relative;
+    background-color: #d7e6f5;
+    text-align: center;
+}
+
+.subscription-span-svg{
+    height: 30px;
+    transform: rotate(180deg);
+    position: absolute;
+    top: -20px;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+.subscription-span-svg svg{
+    width: 100%;
+    fill: #d7e6f5;
+    display: block;
+    overflow: hidden;
+}
+
+.subscription-text{
+    font-size: 16px;
+    line-height: 20px;
+    font-family: font-med;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.subscribe-input{
+    border-radius: 50px;
+    background-color: #fff;
+    display: flex;
+    max-width: 480px;
+    overflow: hidden;
+    width: 100%;
+    margin-inline: auto;
+    border: 1px solid rgba(34, 34, 34, 0.15);
+}
+
+.subscribe-input .email{
+    border: none;
+    padding: 9px 12px 9px 18px;
+    font-size: 16px;
+    line-height: 18px;
+    width: 100%;
+}
+
+.subscribe-input .subscribe-btn{
+    border: none;
+    text-align: left;
+    height: 48px;
+    padding: 12px 21px 12px 15px;
+    font-size: 16px;
+    font-family: font-med;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+
 
 
 @media screen and (min-width:425px) {
@@ -358,6 +647,21 @@ body {
   }
   .dress-card-type{
     margin-bottom: 11px;
+  }
+  .popular-gifts-container{
+    margin-block: 60px;
+    padding-inline: 24px;
+  }
+  .popular-gifts-container h2{
+    font-size: 28px;
+    line-height: 36px;
+    text-align: left;
+  }
+  .popular-gift-card-container{
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .popular-gifts-text-heading{
+    -webkit-line-clamp: 2;
   }
 }
 
@@ -515,7 +819,6 @@ body {
     line-height: 36px;
     font-family: font-light;
     letter-spacing: 0.5px;
-    /* color: #222; */
     padding: 24px 18px 18px 18px;
     background-color: #d7e6f5;
     margin-top: 0;
@@ -574,6 +877,35 @@ body {
   .dress-category{
     grid-template-columns: repeat(6, 1fr);
   }
+  .popular-gift-card-container{
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .popular-gift-card:last-child{
+    display: none;
+  }
+  .about{
+    padding-inline: 54px;
+  }
+  .about-header h2{
+    font-size: 44px;
+    line-height: 48px;
+  }
+  .about-span-svg{
+    transform: scale(1);
+  }
+  .about-info-container{
+    display: flex;
+    column-gap: 36px;
+  }
+  .about-info{
+    flex-basis: 33.33%;
+    max-width: 33.33%;
+    text-align: left;
+  }
+  .footer-about-header{
+    font-size: 28px;
+    line-height: 36px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -586,5 +918,11 @@ body {
   }
   .deals-container{
     margin-top: 36px;
+  }
+  .about{
+    padding-inline: 54px;
+  }
+  .about-info-container{
+    display: flex;
   }
 }

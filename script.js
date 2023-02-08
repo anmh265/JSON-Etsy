@@ -1,4 +1,5 @@
 const categoryList = document.getElementById("categories-list");
+const popularGift = ".popular-gift-card-container";
 
 const categorySVG = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 5 22 12' width='16' height='12' aria-hidden='true' focusable='false'><path d='M5,6A1,1,0,0,0,4,7v3H5v9a1,1,0,0,0,1,1h5V6H5Z'></path><path d='M19,6H13.007A4.245,4.245,0,0,0,14.97,3.744a1.614,1.614,0,0,0-2.65-1.375,1.757,1.757,0,0,0-.315.324,1.753,1.753,0,0,0-.315-0.324A1.615,1.615,0,0,0,9.042,3.746,4.257,4.257,0,0,0,11.006,6H13V20h5a1,1,0,0,0,1-1V10h1V7A1,1,0,0,0,19,6Z'></path></svg>`;
 
@@ -16,7 +17,8 @@ const categoriesObj = [
   { label: "Toys & Entertainment" },
   { label: "Art & Collectibles" },
   { label: "Craft Supplies" },
-  { label: {
+  {
+    label: {
       gift_svg: categorySVG,
       gift_text: "Gifts",
     },
@@ -78,8 +80,8 @@ const discoverList = [
 for (let list of discoverList) {
   const discoverCard = document.createElement("div");
   discoverCard.classList.add("discover-categories-card");
-  const cardImg = document.createElement('img')
-  cardImg.src = `${list.imgURL}`
+  const cardImg = document.createElement("img");
+  cardImg.src = `${list.imgURL}`;
 
   discoverCard.innerHTML = `
   <div class="card-img">
@@ -151,3 +153,153 @@ for (let item of dealsData) {
 
   dealsContainer.appendChild(dealsCard);
 }
+
+const popularGiftData = [
+  {
+    mediaURL:
+      "https://i.etsystatic.com/35966576/c/1614/1283/669/351/il/e1510f/4033777789/il_340x270.4033777789_dqlw.jpg",
+    urlFormat: "picture",
+    textHeading:
+      "Birth Flower Jewelry Travel Case, Birth Month Flower Gift, Personalized Birthday Gift, Leather Jewelry Travel Case, Custom Jewelry Case",
+    customerRating: 9480,
+    currencySymbol: "₹",
+    actualPrice: 1710,
+    discount: 50,
+    freeDelivery: "",
+  },
+  {
+    mediaURL:
+      "https://i.etsystatic.com/32477306/c/2000/1589/0/256/il/0bcd64/3491080620/il_340x270.3491080620_oh18.jpg",
+    urlFormat: "picture",
+    textHeading:
+      "Dainty Name Necklace with Birth Flower, Personalized Name Necklace, Custom Gold Name Jewelry, Birthday Gift for Her, Bridesmaid Gift",
+    customerRating: 13553,
+    currencySymbol: "₹",
+    actualPrice: 3607,
+    discount: 50,
+  },
+  {
+    mediaURL:
+      "https://i.etsystatic.com/25168585/c/2500/1987/0/181/il/214e7e/4589233930/il_340x270.4589233930_dg79.jpg",
+    urlFormat: "video",
+    textHeading:
+      "Custom Pet Portraits Using Pet Photo Personalized Digital Dog Portraits Cat Portraits Custom Dog Portraits Custom Pet Art Pet Drawing",
+    customerRating: 11075,
+    currencySymbol: "₹",
+    actualPrice: 1274,
+    discount: 40,
+  },
+  {
+    mediaURL:
+      "https://i.etsystatic.com/28045281/r/il/3f41fa/3897994052/il_340x270.3897994052_l8xd.jpg",
+    urlFormat: "video",
+    textHeading:
+      "Sun catcher/ Crystal suncatcher/ Crystal Rainbow maker/ Aurora gemstone suncatcher/ crystal prism/ wall hanging/ Home decor/ Gift 4 women",
+    customerRating: 6823,
+    currencySymbol: "₹",
+    actualPrice: 2652,
+    discount: 10,
+  },
+  {
+    mediaURL:
+      "https://i.etsystatic.com/27890741/c/2343/1862/320/560/il/31a0dd/4028709894/il_340x270.4028709894_i6tr.jpg",
+    urlFormat: "video",
+    textHeading:
+      "Heart Keychain Set - Made with Authentic LEGO® Bricks, Matching keychains, Gift Set for Couples, Best Friends - Very High Quality & DURABLE",
+    customerRating: 12338,
+    currencySymbol: "₹",
+    actualPrice: 1452,
+    discount: 50,
+  },
+  {
+    mediaURL:
+      "https://i.etsystatic.com/26694795/c/2445/1943/282/0/il/035b01/3254592822/il_340x270.3254592822_5dss.jpg",
+    urlFormat: "video",
+    textHeading:
+      "Handmade Damascus Pocket Knife Rose Wood Handle Birthday Gift Folding Knife Groomsmen Gift Anniversary Wedding Personalized Gift for Men",
+    customerRating: 6218,
+    currencySymbol: "₹",
+    actualPrice: 8216,
+    discount: 70,
+  },
+];
+
+function createGiftCards(giftContainer) {
+  const mainContainer = document.querySelector(giftContainer);
+  popularGiftData.forEach((item) => {
+    const card = document.createElement("div");
+    card.classList.add("popular-gift-card");
+
+    card.innerHTML = `
+    <div class="popular-gifts-img">
+      <img src="${item.mediaURL}" alt="">
+      <div class="play-btn ${item.urlFormat === "video" ? "active" : ""}">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 4 4 20 20 12 4 4"></polygon></svg>
+      </div>
+    </div>
+    <div class="popular-gifts-text">
+      <p class="popular-gifts-text-heading">
+        ${item.textHeading}
+      </p>
+      <div class="rating">
+        <div class="star-rating">
+          <span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18"aria-hidden="true" focusable="false"><path d="M19.985,10.36a0.5,0.5,0,0,0-477-0.352H14.157L12.488,4.366a0.5,0.5,0,0,0-.962,0l-1.67,5.642H4.5a0.5,0.5,00,0-.279.911L8.53,13.991l-1.5,5.328a0.5,0.5,0,0,0,.741.6l4.231-2.935,4.215,2935a0.5,0.5,0,0,0,.743-0.6l-1.484-5.328,4.306-3.074A0.5,0.5,0,0,0,19.985,1036Z"></path></svg>
+          </span>
+          <span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18"aria-hidden="true" focusable="false"><path d="M19.985,10.36a0.5,0.5,0,0,0-477-0.352H14.157L12.488,4.366a0.5,0.5,0,0,0-.962,0l-1.67,5.642H4.5a0.5,0.5,00,0-.279.911L8.53,13.991l-1.5,5.328a0.5,0.5,0,0,0,.741.6l4.231-2.935,4.215,2935a0.5,0.5,0,0,0,.743-0.6l-1.484-5.328,4.306-3.074A0.5,0.5,0,0,0,19.985,1036Z"></path></svg>
+          </span>
+          <span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18"aria-hidden="true" focusable="false"><path d="M19.985,10.36a0.5,0.5,0,0,0-477-0.352H14.157L12.488,4.366a0.5,0.5,0,0,0-.962,0l-1.67,5.642H4.5a0.5,0.5,00,0-.279.911L8.53,13.991l-1.5,5.328a0.5,0.5,0,0,0,.741.6l4.231-2.935,4.215,2935a0.5,0.5,0,0,0,.743-0.6l-1.484-5.328,4.306-3.074A0.5,0.5,0,0,0,19.985,1036Z"></path></svg>
+          </span>
+          <span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18"aria-hidden="true" focusable="false"><path d="M19.985,10.36a0.5,0.5,0,0,0-477-0.352H14.157L12.488,4.366a0.5,0.5,0,0,0-.962,0l-1.67,5.642H4.5a0.5,0.5,00,0-.279.911L8.53,13.991l-1.5,5.328a0.5,0.5,0,0,0,.741.6l4.231-2.935,4.215,2935a0.5,0.5,0,0,0,.743-0.6l-1.484-5.328,4.306-3.074A0.5,0.5,0,0,0,19.985,1036Z"></path></svg>
+          </span>
+          <span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18"aria-hidden="true" focusable="false"><path class="background" d="M12.007 1697l4.21 2.95c.182.12.422.11.592-.027.17-.138.23-.37.15-.574l-1.484-5.33 4306-3.073c.182-.12.265-.347.203-.557-.065-.21-.258-.352-.477-.352h-5.35l-167-5.642c-.06-.215-.257-.363-.48-.363-.225 0-.42.148-.482.363v12.94l.48-335z"></path><path class="foreground" d="M12 4c-.224 0-.42.15-.48.366l-1.675.642H4.5c-.218.002-.41.145-.472.354-.064.208.014.433.193.557l4.307 3.07-1.55.33c-.08.202-.02.433.15.57.17.14.41.15.59.03L12 16.98V4z"></path></svg>
+          </span>
+        </div>
+        <span class="customer-rating">
+            (${item.customerRating})
+        </span>
+    </div>
+    <div class="popular-gifts-price">
+        <span class="currency-symbol">${item.currencySymbol}</span>
+        <span class="actual-price">${calculatePrice(
+          item.actualPrice,
+          item.discount
+        )}</span>
+    </div>
+    <div class="popular-gifts-discount-section">
+        <span class="popular-gift-strikeout">
+            ${item.currencySymbol} ${item.actualPrice}
+        </span>
+        <span class="discount">
+            (${item.discount}% off)
+        </span>
+    </div>
+    <div class="free-delivery ${
+      calculatePrice(item.actualPrice, item.discount) > 1000 ? "active" : ""
+    }">
+        FREE delivery
+    </div>
+  </div>
+    `;
+
+    mainContainer.appendChild(card);
+  });
+}
+
+function createGiftContainer(giftContainer, giftData) {
+  const mainContainer = document.querySelector(giftContainer);
+  giftData.forEach((item) => {
+    const card = document.createElement("div");
+    card.classList.add("popular-gift-card");
+  });
+}
+
+function calculatePrice(price, disc) {
+  return Math.round(price * (1 - disc / 100));
+}
+
+createGiftCards(popularGift);
