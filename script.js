@@ -7,6 +7,9 @@ const discoverCategoryContainer = document.querySelector(
   ".discover-categories"
 );
 const dealsContainer = document.querySelector(".dress-category");
+const footerDropDownBtns = document.querySelectorAll(
+  ".footer-shop-category .shop-btn"
+);
 
 const categoriesObj = [
   { label: "Sellers' Sales Hub" },
@@ -242,21 +245,21 @@ function createGiftCards(giftContainer) {
         ${item.textHeading}
       </p>
       <div class="rating">
-        <div class="star-rating">
+      <div class="star-rating">        
           <span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18"aria-hidden="true" focusable="false"><path d="M19.985,10.36a0.5,0.5,0,0,0-477-0.352H14.157L12.488,4.366a0.5,0.5,0,0,0-.962,0l-1.67,5.642H4.5a0.5,0.5,00,0-.279.911L8.53,13.991l-1.5,5.328a0.5,0.5,0,0,0,.741.6l4.231-2.935,4.215,2935a0.5,0.5,0,0,0,.743-0.6l-1.484-5.328,4.306-3.074A0.5,0.5,0,0,0,19.985,1036Z"></path></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18" aria-hidden="true" focusable="false"><path d="M19.985,10.36a0.5,0.5,0,0,0-.477-0.352H14.157L12.488,4.366a0.5,0.5,0,0,0-.962,0l-1.67,5.642H4.5a0.5,0.5,0,0,0-.279.911L8.53,13.991l-1.5,5.328a0.5,0.5,0,0,0,.741.6l4.231-2.935,4.215,2.935a0.5,0.5,0,0,0,.743-0.6l-1.484-5.328,4.306-3.074A0.5,0.5,0,0,0,19.985,10.36Z"></path></svg>
           </span>
           <span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18"aria-hidden="true" focusable="false"><path d="M19.985,10.36a0.5,0.5,0,0,0-477-0.352H14.157L12.488,4.366a0.5,0.5,0,0,0-.962,0l-1.67,5.642H4.5a0.5,0.5,00,0-.279.911L8.53,13.991l-1.5,5.328a0.5,0.5,0,0,0,.741.6l4.231-2.935,4.215,2935a0.5,0.5,0,0,0,.743-0.6l-1.484-5.328,4.306-3.074A0.5,0.5,0,0,0,19.985,1036Z"></path></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18" aria-hidden="true" focusable="false"><path d="M19.985,10.36a0.5,0.5,0,0,0-.477-0.352H14.157L12.488,4.366a0.5,0.5,0,0,0-.962,0l-1.67,5.642H4.5a0.5,0.5,0,0,0-.279.911L8.53,13.991l-1.5,5.328a0.5,0.5,0,0,0,.741.6l4.231-2.935,4.215,2.935a0.5,0.5,0,0,0,.743-0.6l-1.484-5.328,4.306-3.074A0.5,0.5,0,0,0,19.985,10.36Z"></path></svg>
           </span>
           <span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18"aria-hidden="true" focusable="false"><path d="M19.985,10.36a0.5,0.5,0,0,0-477-0.352H14.157L12.488,4.366a0.5,0.5,0,0,0-.962,0l-1.67,5.642H4.5a0.5,0.5,00,0-.279.911L8.53,13.991l-1.5,5.328a0.5,0.5,0,0,0,.741.6l4.231-2.935,4.215,2935a0.5,0.5,0,0,0,.743-0.6l-1.484-5.328,4.306-3.074A0.5,0.5,0,0,0,19.985,1036Z"></path></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18" aria-hidden="true" focusable="false"><path d="M19.985,10.36a0.5,0.5,0,0,0-.477-0.352H14.157L12.488,4.366a0.5,0.5,0,0,0-.962,0l-1.67,5.642H4.5a0.5,0.5,0,0,0-.279.911L8.53,13.991l-1.5,5.328a0.5,0.5,0,0,0,.741.6l4.231-2.935,4.215,2.935a0.5,0.5,0,0,0,.743-0.6l-1.484-5.328,4.306-3.074A0.5,0.5,0,0,0,19.985,10.36Z"></path></svg>
           </span>
           <span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18"aria-hidden="true" focusable="false"><path d="M19.985,10.36a0.5,0.5,0,0,0-477-0.352H14.157L12.488,4.366a0.5,0.5,0,0,0-.962,0l-1.67,5.642H4.5a0.5,0.5,00,0-.279.911L8.53,13.991l-1.5,5.328a0.5,0.5,0,0,0,.741.6l4.231-2.935,4.215,2935a0.5,0.5,0,0,0,.743-0.6l-1.484-5.328,4.306-3.074A0.5,0.5,0,0,0,19.985,1036Z"></path></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18" aria-hidden="true" focusable="false"><path d="M19.985,10.36a0.5,0.5,0,0,0-.477-0.352H14.157L12.488,4.366a0.5,0.5,0,0,0-.962,0l-1.67,5.642H4.5a0.5,0.5,0,0,0-.279.911L8.53,13.991l-1.5,5.328a0.5,0.5,0,0,0,.741.6l4.231-2.935,4.215,2.935a0.5,0.5,0,0,0,.743-0.6l-1.484-5.328,4.306-3.074A0.5,0.5,0,0,0,19.985,10.36Z"></path></svg>
           </span>
           <span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18"aria-hidden="true" focusable="false"><path class="background" d="M12.007 1697l4.21 2.95c.182.12.422.11.592-.027.17-.138.23-.37.15-.574l-1.484-5.33 4306-3.073c.182-.12.265-.347.203-.557-.065-.21-.258-.352-.477-.352h-5.35l-167-5.642c-.06-.215-.257-.363-.48-.363-.225 0-.42.148-.482.363v12.94l.48-335z"></path><path class="foreground" d="M12 4c-.224 0-.42.15-.48.366l-1.675.642H4.5c-.218.002-.41.145-.472.354-.064.208.014.433.193.557l4.307 3.07-1.55.33c-.08.202-.02.433.15.57.17.14.41.15.59.03L12 16.98V4z"></path></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18" aria-hidden="true" focusable="false"><path d="M19.985,10.36a0.5,0.5,0,0,0-.477-0.352H14.157L12.488,4.366a0.5,0.5,0,0,0-.962,0l-1.67,5.642H4.5a0.5,0.5,0,0,0-.279.911L8.53,13.991l-1.5,5.328a0.5,0.5,0,0,0,.741.6l4.231-2.935,4.215,2.935a0.5,0.5,0,0,0,.743-0.6l-1.484-5.328,4.306-3.074A0.5,0.5,0,0,0,19.985,10.36Z"></path></svg>
           </span>
         </div>
         <span class="customer-rating">
@@ -290,16 +293,37 @@ function createGiftCards(giftContainer) {
   });
 }
 
-function createGiftContainer(giftContainer, giftData) {
-  const mainContainer = document.querySelector(giftContainer);
-  giftData.forEach((item) => {
-    const card = document.createElement("div");
-    card.classList.add("popular-gift-card");
-  });
+function createRatingStar(){
+  const starMainContainer = document.createElement('div')
+  starMainContainer.classList.add('star-rating')
+  for(let i = 0; i < 5; i++){
+    const starContainer = document.createElement('span')
+    starContainer.innerHTML = `
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18" aria-hidden="true" focusable="false"><path d="M19.985,10.36a0.5,0.5,0,0,0-.477-0.352H14.157L12.488,4.366a0.5,0.5,0,0,0-.962,0l-1.67,5.642H4.5a0.5,0.5,0,0,0-.279.911L8.53,13.991l-1.5,5.328a0.5,0.5,0,0,0,.741.6l4.231-2.935,4.215,2.935a0.5,0.5,0,0,0,.743-0.6l-1.484-5.328,4.306-3.074A0.5,0.5,0,0,0,19.985,10.36Z"></path></svg>
+    `
+    // console.log(starContainer)
+    starMainContainer.appendChild(starContainer)
+  }
+  // console.log(starMainContainer)
+  return starMainContainer
 }
+
+// function createGiftContainer(giftContainer, giftData) {
+//   const mainContainer = document.querySelector(giftContainer);
+//   giftData.forEach((item) => {
+//     const card = document.createElement("div");
+//     card.classList.add("popular-gift-card");
+//   });
+// }
 
 function calculatePrice(price, disc) {
   return Math.round(price * (1 - disc / 100));
 }
 
 createGiftCards(popularGift);
+
+footerDropDownBtns.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    btn.parentNode.classList.toggle("show");
+  });
+});
