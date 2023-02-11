@@ -191,7 +191,7 @@ const popularGiftData = [
     actualPrice: 1710,
     discount: 50,
     freeDelivery: "",
-    rating: 4.5
+    rating: 4.5,
   },
   {
     mediaURL:
@@ -204,7 +204,7 @@ const popularGiftData = [
     currencySymbol: "₹",
     actualPrice: 3607,
     discount: 50,
-    rating: 4
+    rating: 4,
   },
   {
     mediaURL:
@@ -218,7 +218,7 @@ const popularGiftData = [
     currencySymbol: "₹",
     actualPrice: 1274,
     discount: 40,
-    rating: 3.5
+    rating: 2.5,
   },
   {
     mediaURL:
@@ -232,7 +232,7 @@ const popularGiftData = [
     currencySymbol: "₹",
     actualPrice: 2652,
     discount: 10,
-    rating: 5
+    rating: 5,
   },
   {
     mediaURL:
@@ -246,7 +246,7 @@ const popularGiftData = [
     currencySymbol: "₹",
     actualPrice: 1452,
     discount: 50,
-    rating: 4.5
+    rating: 4.5,
   },
   {
     mediaURL:
@@ -277,7 +277,7 @@ function createGiftCards(giftContainer, data) {
 
     card.addEventListener("mouseover", (e) => {
       x = e.pageX - card.offsetLeft;
-      y = e.pageY - card.offsetTop;
+      y = e.pageY - card.offsetTop + 20;
       tooltipCard.style.top = `${y}px`;
       tooltipCard.style.left = `${x}px`;
     });
@@ -427,12 +427,11 @@ clickWishlist();
 // }
 
 const halfStar = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18" aria-hidden="true" focusable="false"><path class="foreground" d="M12 4c-.224 0-.42.15-.48.366l-1.67 5.642H4.5c-.218.002-.41.145-.472.354-.064.208.014.433.193.557l4.307 3.07-1.5 5.33c-.08.202-.02.433.15.57.17.14.41.15.59.03L12 16.98V4z"></path></svg>`;
-const fullStar = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18" aria-hidden="true" focusable="false"><path d="M19.985,10.36a0.5,0.5,0,0,0-.477-0.352H14.157L12.488,4.366a0.5,0.5,0,0,0-.962,0l-1.67,5.642H4.5a0.5,0.5,0,0,0-.279.911L8.53,13.991l-1.5,5.328a0.5,0.5,0,0,0,.741.6l4.231-2.935,4.215,2.935a0.5,0.5,0,0,0,.743-0.6l-1.484-5.328,4.306-3.074A0.5,0.5,0,0,0,19.985,10.36Z"></path></svg>`
+const fullStar = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18" aria-hidden="true" focusable="false"><path d="M19.985,10.36a0.5,0.5,0,0,0-.477-0.352H14.157L12.488,4.366a0.5,0.5,0,0,0-.962,0l-1.67,5.642H4.5a0.5,0.5,0,0,0-.279.911L8.53,13.991l-1.5,5.328a0.5,0.5,0,0,0,.741.6l4.231-2.935,4.215,2.935a0.5,0.5,0,0,0,.743-0.6l-1.484-5.328,4.306-3.074A0.5,0.5,0,0,0,19.985,10.36Z"></path></svg>`;
 
 function printStar(n) {
   const starContainer = document.createElement("div");
   starContainer.classList.add("star-rating");
-  
 
   if (n > 5) {
     n = 5;
@@ -440,23 +439,21 @@ function printStar(n) {
 
   for (let i = 1; i <= Math.floor(n); i++) {
     const star = document.createElement("span");
-    star.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18" aria-hidden="true" focusable="false"><path d="M19.985,10.36a0.5,0.5,0,0,0-.477-0.352H14.157L12.488,4.366a0.5,0.5,0,0,0-.962,0l-1.67,5.642H4.5a0.5,0.5,0,0,0-.279.911L8.53,13.991l-1.5,5.328a0.5,0.5,0,0,0,.741.6l4.231-2.935,4.215,2.935a0.5,0.5,0,0,0,.743-0.6l-1.484-5.328,4.306-3.074A0.5,0.5,0,0,0,19.985,10.36Z"></path></svg>`
+    star.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18" aria-hidden="true" focusable="false"><path d="M19.985,10.36a0.5,0.5,0,0,0-.477-0.352H14.157L12.488,4.366a0.5,0.5,0,0,0-.962,0l-1.67,5.642H4.5a0.5,0.5,0,0,0-.279.911L8.53,13.991l-1.5,5.328a0.5,0.5,0,0,0,.741.6l4.231-2.935,4.215,2.935a0.5,0.5,0,0,0,.743-0.6l-1.484-5.328,4.306-3.074A0.5,0.5,0,0,0,19.985,10.36Z"></path></svg>`;
     // console.log(i)
     starContainer.appendChild(star);
   }
 
-  if(n - Math.floor(n) !== 0){
+  if (n - Math.floor(n) !== 0) {
     const star = document.createElement("span");
-    star.innerHTML += `<svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18" aria-hidden="true" focusable="false"><path class="foreground" d="M12 4c-.224 0-.42.15-.48.366l-1.67 5.642H4.5c-.218.002-.41.145-.472.354-.064.208.014.433.193.557l4.307 3.07-1.5 5.33c-.08.202-.02.433.15.57.17.14.41.15.59.03L12 16.98V4z"></path></svg>`
+    star.innerHTML += `<svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18" aria-hidden="true" focusable="false"><path class="foreground" d="M12 4c-.224 0-.42.15-.48.366l-1.67 5.642H4.5c-.218.002-.41.145-.472.354-.064.208.014.433.193.557l4.307 3.07-1.5 5.33c-.08.202-.02.433.15.57.17.14.41.15.59.03L12 16.98V4z"></path></svg>`;
 
     starContainer.appendChild(star);
   }
 
-  
-  return starContainer
+  return starContainer;
 }
 // console.log(printStar(5))
-
 
 function calculatePrice(price, disc) {
   return Math.round(price * (1 - disc / 100));
