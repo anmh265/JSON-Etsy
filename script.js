@@ -465,6 +465,8 @@ footerDropDownBtns.forEach((btn) => {
   });
 });
 
+// console.log(footerDropDownBtns)
+
 // card.innerHTML = `
 // <div class="popular-gifts-img">
 // <img src="${item.mediaURL}" alt="">
