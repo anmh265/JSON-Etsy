@@ -302,7 +302,7 @@ function createGiftCards(giftContainer, data) {
     } else {
       videoTag.src = item.videoURL;
       videoTag.poster = item.mediaURL;
-      // videoTag.muted = "muted";
+      videoTag.muted = "muted";
       giftsImgContainer.appendChild(videoTag);
     }
     const wishlistBtn = document.createElement("div");
