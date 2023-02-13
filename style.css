@@ -260,11 +260,17 @@ body {
   margin-bottom: -2px;
 }
 
-.deals-header a img {
+.right-arrow {
   height: 24px;
   width: 12px;
   margin-left: 9px;
   margin-top: -1px;
+  transform: translateX(0);
+  transition: transform 0.2s ease-in-out;
+}
+
+.deals-header a:hover .right-arrow{
+  transform: translateX(4px);
 }
 
 .dress-category {
@@ -378,7 +384,7 @@ body {
 }
 
 .popular-gifts-img video {
-  max-height: 185px;
+  max-height: 178px;
   object-fit: cover;
   object-position: center center;
 }
@@ -580,6 +586,7 @@ body {
   text-decoration: underline;
   text-decoration-style: dotted;
   text-underline-offset: 2px;
+  cursor: help;
 }
 
 .help-section {
@@ -655,6 +662,10 @@ body {
   width: 100%;
 }
 
+.subscribe-input .email:focus{
+  outline: none;
+}
+
 .subscribe-input .subscribe-btn {
   border: none;
   text-align: left;
@@ -664,6 +675,11 @@ body {
   font-family: font-med;
   background-color: transparent;
   cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.subscribe-input .subscribe-btn:hover{
+  background-color: rgb(245, 242, 242);
 }
 
 .footer-powered {
@@ -790,12 +806,16 @@ body {
   padding: 6px 0 12px;
 }
 
-.shop-list li a {
+.footer-shop-category ul li a {
   color: white;
   text-decoration: none;
   font-size: 16px;
   line-height: 18px;
   font-family: font-reg;
+}
+
+.footer-shop-category ul li a:hover{
+  text-decoration: underline;
 }
 
 .etsy-social {
@@ -872,7 +892,13 @@ body {
   align-items: center;
   font-family: font-med;
   margin-bottom: 12px;
+  border-radius: 50px;
   transform: scale(1.04);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.footer-regions:hover{
+  background-color: #373753;
 }
 
 .world-logo {
@@ -1124,6 +1150,10 @@ body {
     align-items: center;
     justify-content: center;
     transform: translateY(1px);
+  }
+
+  .web-search-section .web-search:focus{
+    outline: none;
   }
 
   .web-search-btn {
