@@ -1,28 +1,32 @@
-const categoryList = "categories-list"
-const popularGift = ".popular-gift-card-container";
+(function(){
+const categoryListIdName = "categories-list";
+const categoryGiftSVG = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 5 22 12' width='16' height='12' aria-hidden='true' focusable='false'><path d='M5,6A1,1,0,0,0,4,7v3H5v9a1,1,0,0,0,1,1h5V6H5Z'></path><path d='M19,6H13.007A4.245,4.245,0,0,0,14.97,3.744a1.614,1.614,0,0,0-2.65-1.375,1.757,1.757,0,0,0-.315.324,1.753,1.753,0,0,0-.315-0.324A1.615,1.615,0,0,0,9.042,3.746,4.257,4.257,0,0,0,11.006,6H13V20h5a1,1,0,0,0,1-1V10h1V7A1,1,0,0,0,19,6Z'></path></svg>`;
 
-const categorySVG = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 5 22 12' width='16' height='12' aria-hidden='true' focusable='false'><path d='M5,6A1,1,0,0,0,4,7v3H5v9a1,1,0,0,0,1,1h5V6H5Z'></path><path d='M19,6H13.007A4.245,4.245,0,0,0,14.97,3.744a1.614,1.614,0,0,0-2.65-1.375,1.757,1.757,0,0,0-.315.324,1.753,1.753,0,0,0-.315-0.324A1.615,1.615,0,0,0,9.042,3.746,4.257,4.257,0,0,0,11.006,6H13V20h5a1,1,0,0,0,1-1V10h1V7A1,1,0,0,0,19,6Z'></path></svg>`;
+const popularGiftCardClassName = ".popular-gift-card-container";
 
-const discoverCategoryContainer = ".discover-categories"
+const discoverCategoryContainerClassName = ".discover-categories";
+
 const dealsContainer = document.querySelector(".dress-category");
+
 const footerDropDownBtns = document.querySelectorAll(
   ".footer-shop-category .shop-btn"
 );
-const popularGiftImgContainer = ".popular-gifts-img";
+const popularGiftImgContainerClassName = ".popular-gifts-img";
 
 const playSvg =
   '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 4 4 20 20 12 4 4"></polygon></svg>';
+
 const wishlistSVG =
   '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="true"><path d="M12,21C10.349,21,2,14.688,2,9,2,5.579,4.364,3,7.5,3A6.912,6.912,0,0,1,12,5.051,6.953,6.953,0,0,1,16.5,3C19.636,3,22,5.579,22,9,22,14.688,13.651,21,12,21ZM7.5,5C5.472,5,4,6.683,4,9c0,4.108,6.432,9.325,8,10,1.564-.657,8-5.832,8-10,0-2.317-1.472-4-3.5-4-1.979,0-3.7,2.105-3.721,2.127L11.991,8.1,11.216,7.12C11.186,7.083,9.5,5,7.5,5Z"></path></svg>';
 const afterClickSVG =
-  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16.5,3A6.953,6.953,0,0,0,12,5.051,6.912,6.912,0,0,0,7.5,3C4.364,3,2,5.579,2,9c0,5.688,8.349,12,10,12S22,14.688,22,9C22,5.579,19.636,3,16.5,3Z"></path></svg>';
+  '<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="24" height="24"><path d="M16.5,3A6.953,6.953,0,0,0,12,5.051,6.912,6.912,0,0,0,7.5,3C4.364,3,2,5.579,2,9c0,5.688,8.349,12,10,12S22,14.688,22,9C22,5.579,19.636,3,16.5,3Z" fill="#A61A2E"></path></svg>';
 
 const halfStar = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18" aria-hidden="true" focusable="false"><path class="foreground" d="M12 4c-.224 0-.42.15-.48.366l-1.67 5.642H4.5c-.218.002-.41.145-.472.354-.064.208.014.433.193.557l4.307 3.07-1.5 5.33c-.08.202-.02.433.15.57.17.14.41.15.59.03L12 16.98V4z"></path></svg>`;
 
 const fullStar = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18" aria-hidden="true" focusable="false"><path d="M19.985,10.36a0.5,0.5,0,0,0-.477-0.352H14.157L12.488,4.366a0.5,0.5,0,0,0-.962,0l-1.67,5.642H4.5a0.5,0.5,0,0,0-.279.911L8.53,13.991l-1.5,5.328a0.5,0.5,0,0,0,.741.6l4.231-2.935,4.215,2.935a0.5,0.5,0,0,0,.743-0.6l-1.484-5.328,4.306-3.074A0.5,0.5,0,0,0,19.985,10.36Z"></path></svg>`;
 
 const EtsyHomePageData = {
-  categoriesObj: [
+  categoriesData: [
     { label: "Sellers' Sales Hub" },
     { label: "Jewellery & Accessories" },
     { label: "Clothing & Shoes" },
@@ -33,13 +37,13 @@ const EtsyHomePageData = {
     { label: "Craft Supplies" },
     {
       label: {
-        gift_svg: categorySVG,
+        gift_svg: categoryGiftSVG,
         gift_text: "Gifts",
       },
     },
   ],
 
-  discoverList: [
+  discoverListData: [
     {
       imgURL:
         "https://i.etsystatic.com/17600118/c/1000/1000/0/119/il/d077de/2325460652/il_300x300.2325460652_lhfz.jpg",
@@ -197,8 +201,8 @@ const EtsyHomePageData = {
   ],
 };
 
-function createCategoryList(cList,listItem, elemType) {
-  const container = document.getElementById(listItem)
+function createCategoryList(cList, listItemIdName, elemType) {
+  const container = document.getElementById(listItemIdName);
   for (let key in cList) {
     const liEl = document.createElement(elemType);
     if (typeof cList[key].label === "object") {
@@ -208,17 +212,16 @@ function createCategoryList(cList,listItem, elemType) {
       `;
     } else {
       liEl.innerHTML = `
-      <a href = "">${EtsyHomePageData.categoriesObj[key].label}</a>
+      <a href = "">${cList[key].label}</a>
       `;
     }
-
     container.appendChild(liEl);
   }
 }
-createCategoryList(EtsyHomePageData.categoriesObj,categoryList, "li");
+createCategoryList(EtsyHomePageData.categoriesData, categoryListIdName, "li");
 
 function createDiscoverListSection(items) {
-  const container = document.querySelector(discoverCategoryContainer)
+  const container = document.querySelector(discoverCategoryContainerClassName);
   for (let list of items) {
     const discoverCard = document.createElement("div");
     discoverCard.classList.add("discover-categories-card");
@@ -239,7 +242,7 @@ function createDiscoverListSection(items) {
     container.appendChild(discoverCard);
   }
 }
-createDiscoverListSection(EtsyHomePageData.discoverList);
+createDiscoverListSection(EtsyHomePageData.discoverListData);
 
 function createDealsCards(data) {
   for (let item of data) {
@@ -296,6 +299,7 @@ function createGiftCards(giftContainer, data) {
 
     const imgTag = document.createElement("img");
     const videoTag = document.createElement("video");
+
     if (item.urlFormat === "picture") {
       imgTag.src = item.mediaURL;
       giftsImgContainer.appendChild(imgTag);
@@ -360,7 +364,9 @@ function createGiftCards(giftContainer, data) {
     discountSection.classList.add("popular-gifts-discount-section");
     const strikeoutSpan = document.createElement("span");
     strikeoutSpan.classList.add("popular-gift-strikeout");
-    strikeoutSpan.innerHTML = `${item.currencySymbol} ${item.actualPrice.toLocaleString()}`;
+    strikeoutSpan.innerHTML = `${
+      item.currencySymbol
+    } ${item.actualPrice.toLocaleString()}`;
     discountSection.appendChild(strikeoutSpan);
 
     const discountPerc = document.createElement("span");
@@ -385,10 +391,10 @@ function createGiftCards(giftContainer, data) {
     mainContainer.appendChild(card);
   });
 }
-createGiftCards(popularGift, EtsyHomePageData.popularGiftData);
+createGiftCards(popularGiftCardClassName, EtsyHomePageData.popularGiftData);
 
-function playVideoOnHover(imgContainer) {
-  const container = document.querySelectorAll(imgContainer);
+function playVideoOnHover(imgClassName) {
+  const container = document.querySelectorAll(imgClassName);
   container.forEach((item) => {
     if (item.children[0].tagName === "VIDEO") {
       item.addEventListener("mouseover", () => {
@@ -404,7 +410,7 @@ function playVideoOnHover(imgContainer) {
     }
   });
 }
-playVideoOnHover(popularGiftImgContainer);
+playVideoOnHover(popularGiftImgContainerClassName);
 
 function clickWishlist() {
   const items = document.querySelectorAll(".wishlist-btn");
@@ -433,17 +439,14 @@ function printStar(n) {
   for (let i = 1; i <= Math.floor(n); i++) {
     const star = document.createElement("span");
     star.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18" aria-hidden="true" focusable="false"><path d="M19.985,10.36a0.5,0.5,0,0,0-.477-0.352H14.157L12.488,4.366a0.5,0.5,0,0,0-.962,0l-1.67,5.642H4.5a0.5,0.5,0,0,0-.279.911L8.53,13.991l-1.5,5.328a0.5,0.5,0,0,0,.741.6l4.231-2.935,4.215,2.935a0.5,0.5,0,0,0,.743-0.6l-1.484-5.328,4.306-3.074A0.5,0.5,0,0,0,19.985,10.36Z"></path></svg>`;
-    // console.log(i)
     starContainer.appendChild(star);
   }
 
   if (n - Math.floor(n) !== 0) {
     const star = document.createElement("span");
     star.innerHTML += `<svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18" aria-hidden="true" focusable="false"><path class="foreground" d="M12 4c-.224 0-.42.15-.48.366l-1.67 5.642H4.5c-.218.002-.41.145-.472.354-.064.208.014.433.193.557l4.307 3.07-1.5 5.33c-.08.202-.02.433.15.57.17.14.41.15.59.03L12 16.98V4z"></path></svg>`;
-
     starContainer.appendChild(star);
   }
-
   return starContainer;
 }
 
@@ -456,3 +459,4 @@ footerDropDownBtns.forEach((btn) => {
     btn.parentNode.classList.toggle("show");
   });
 });
+})()
