@@ -1,16 +1,24 @@
 (function () {
 
-  const URL = 'https://raw.githubusercontent.com/anmh265/JSON-Etsy/main/Data.json?token=GHSAT0AAAAAAB55I3MVEDHCJ7JFM4NAQ6TMY7VT6VQ'
+  const URL = 'https://raw.githubusercontent.com/anmh265/JSON-Etsy/main/Data.json'
 
   async function jsonDataToObj(dataURL){
     const res = await fetch(dataURL)
     const data = await res.json()
 
     callFunctions(data)
-    console.log(data)
   }
 
   jsonDataToObj(URL)
+
+  function callFunctions(data){
+
+    createCategoryList(data.categoriesData, categoryListIdName, "li");
+    createDealsCards(data.dealsData, dealsContainerClassName);
+    createDiscoverListSection(data.discoverListData);
+    createGiftCards(popularGiftCardClassName, data.popularGiftData);
+
+  }
 
   const categoryListIdName = "categories-list";
   const categoryGiftSVG = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 5 22 12' width='16' height='12' aria-hidden='true' focusable='false'><path d='M5,6A1,1,0,0,0,4,7v3H5v9a1,1,0,0,0,1,1h5V6H5Z'></path><path d='M19,6H13.007A4.245,4.245,0,0,0,14.97,3.744a1.614,1.614,0,0,0-2.65-1.375,1.757,1.757,0,0,0-.315.324,1.753,1.753,0,0,0-.315-0.324A1.615,1.615,0,0,0,9.042,3.746,4.257,4.257,0,0,0,11.006,6H13V20h5a1,1,0,0,0,1-1V10h1V7A1,1,0,0,0,19,6Z'></path></svg>`;
@@ -168,6 +176,8 @@
 
       card.appendChild(giftsImgContainer);
 
+      playVideoOnHover(popularGiftImgContainerClassName);
+
       const giftTextContainer = document.createElement("div");
       giftTextContainer.classList.add("popular-gifts-text");
 
@@ -234,7 +244,9 @@
       card.appendChild(giftTextContainer);
 
       mainContainer.appendChild(card);
+  
     });
+    clickWishlist()
   }
   
 
@@ -243,6 +255,7 @@
     container.forEach((item) => {
       if (item.children[0].tagName === "VIDEO") {
         item.addEventListener("mouseover", () => {
+          console.log('hi')
           item.children[0].play();
           item.children[2].classList.remove("active");
         });
@@ -255,7 +268,7 @@
       }
     });
   }
-  playVideoOnHover(popularGiftImgContainerClassName);
+
 
   function clickWishlist() {
     const items = document.querySelectorAll(".wishlist-btn");
@@ -271,7 +284,7 @@
       });
     });
   }
-  clickWishlist();
+
 
   function printStar(n) {
     const starContainer = document.createElement("div");
@@ -304,17 +317,5 @@
       btn.parentNode.classList.toggle("show");
     });
   });
-
-  function callFunctions(data){
-    console.log(data)
-
-    createCategoryList(data.categoriesData, categoryListIdName, "li");
-
-    createDealsCards(data.dealsData, dealsContainerClassName);
-
-    createDiscoverListSection(data.discoverListData);
-
-    createGiftCards(popularGiftCardClassName, data.popularGiftData);
-
-  }
+  
 })();

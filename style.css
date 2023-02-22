@@ -162,7 +162,6 @@ body {
   line-height: 32px;
   font-family: font-light;
   letter-spacing: 0.35px;
-  /* color: #222; */
   padding-top: 20px;
   padding-inline: 12px;
   margin-top: 12px;
@@ -384,7 +383,7 @@ body {
 }
 
 .popular-gifts-img video {
-  max-height: 178px;
+  max-height: 163px;
   object-fit: cover;
   object-position: center center;
 }
