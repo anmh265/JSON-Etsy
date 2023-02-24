@@ -324,6 +324,12 @@ body {
   margin-inline: auto;
 }
 
+.popular-gifts-heading{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .popular-gifts-container h2 {
   text-align: center;
   font-size: 18px;
@@ -336,6 +342,40 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
+}
+
+#filter-form{
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.popular-gift-filter{
+  padding: 5px;
+}
+
+.popular-gift-filter:focus{
+  outline: none;
+}
+
+.popular-gift-filter{
+  border: none;
+}
+
+.popular-gift-filter::-webkit-outer-spin-button, 
+.popular-gift-filter::-webkit-inner-spin-button{
+  display: none;
+}
+
+.submit-btn{
+  cursor: pointer;
+  border: none;
+  height: 100%;
+  padding: 5px;
+  background-color: black;
+  color: white;
 }
 
 .popular-gift-card {
